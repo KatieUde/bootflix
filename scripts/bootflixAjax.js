@@ -87,6 +87,7 @@ app.MovieModel = function MovieModel(options) {
     this.Plot = options.Plot;
     this.Year = options.Year;
     this.Genre = options.Genre;
+    this.Poster = options.Poster;
   }
   // id, title, rating, director, plot, year, genre should all be in the `options` object
   // store all the information in the model
@@ -99,7 +100,7 @@ app.MovieModel = function MovieModel(options) {
 app.MovieView = function MovieView(options) {
   this.render = function() {
     console.log('MovieView rendering.');
-    var div = $('<div class="movie"><table><tr><td><h3>'+options.Title+'</h3><p><strong>Released: </strong>'+options.Year+'<br><strong>Directed By: </strong>'+options.Director+'<br><em>'+options.Genre+'</em></p><p>'+options.Plot+'</p></td></tr></table></div>');
+    var div = $('<div class="movie"><table><tr><td><img src="'+options.Poster+'" alt="'+options.Title+'"></td><td><h3>'+options.Title+'</h3><p><strong>Released: </strong>'+options.Year+'<br><strong>Directed By: </strong>'+options.Director+'<br><em>'+options.Genre+'</em></p><p>'+options.Plot+'</p></td></tr></table></div>');
 
     $("#movie-listing").append(div);
   }
